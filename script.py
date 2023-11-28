@@ -24,7 +24,7 @@ def sleepFunction():
 def run():
     print("preview is initiated")
     try:
-        command = "libcamera-hello -t 5000 --autofocus --info-text Preview_Display"
+        command = "libcamera-hello -t 5000 --info-text Preview_Display"
         cmd = command
         p = Popen(cmd.split())
         x = p.pid
@@ -46,7 +46,7 @@ def WorkerThread():
     try:
         location = "/media/pi/SD/"
         name = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        command = "libcamera-still -t 3000 -o "+name+".jpg --autofocus --info-text Image_Capture"
+        command = "libcamera-still -t 3000 -o "+name+".jpg --info-text Image_Capture"
         cmd = command
         r = Popen(cmd.split())
         k = r.pid
