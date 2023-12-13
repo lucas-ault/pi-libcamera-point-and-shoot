@@ -68,19 +68,3 @@ while True:
     elif (PreviewButton.is_pressed == True):
         run()
         time.sleep(1)
-
-    elif (shutdownButton.is_pressed == True):
-        pressed_time=time.monotonic()
-        while (shutdownButton.is_pressed == True): 
-            pass
-        pressed_time=time.monotonic()-pressed_time
-        if pressed_time<5:
-            print("shutdownButton is pressed less then 5 sec")
-            sleepFunction()
-            time.sleep(0.05)
-        elif pressed_time>=5: 
-            print("shutdownButton is pressed more then 5 sec")       
-            command = "sudo shutdown -h now"
-            cmd = command
-            p = Popen(cmd.split())
-            time.sleep(0.05)
