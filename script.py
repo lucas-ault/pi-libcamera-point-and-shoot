@@ -46,7 +46,7 @@ def WorkerThread():
     try:
         location = "/media/pi/SD/"
         name = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        command = "libcamera-still -t 3000 -o "+name+".jpg --info-text Image_Capture"
+        command = "libcamera-still -t 3000 -o "+name+".jpg --autofocus-mode auto --info-text Image_Capture"
         cmd = command
         r = Popen(cmd.split())
         k = r.pid
